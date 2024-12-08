@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RMS: Research Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style3.css" />
+  </head>
+  <body>
+    <div class="sidebar bg-body-tertiary">
+      <div class="mt-4 mb-4 ms-3">
+        <h1 class="site_title"><b class="logo">&lt;/&gt;</b> RMS</h1>
+      </div>
+      <a class="active" href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+        <label class="form-check-label" for="darkModeToggle" id="themeLabel"
+          >Dark Mode</label
+        >
+      </div>
+    </div>
+
+    <div class="container-fluid content">
+      <div class="sticky-top px-0 bg-body-tertiary">xxx</div>
+
+      <div class="mt-4 mb-4">
+        <h1 class="site_title">
+          <b class="logo">&lt;/&gt;</b> Research Mgt System
+        </h1>
+      </div>
+      <p>
+        This example use media queries to transform the sidebar to a top
+        navigation bar when the screen size is 700px or less.
+      </p>
+      <p>
+        We have also added a media query for screens that are 400px or less,
+        which will vertically stack and center the navigation links.
+      </p>
+      <h3>Resize the browser window to see the effect.</h3>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-body-tertiary content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 justify pe-4">
+            <div>
+              <h1 class="gradient-animate">
+                <b class="logo">&lt;/&gt;</b> Research Mgt System
+              </h1>
+            </div>
+            A Research Management System streamlines and centralizes research
+            activities, allowing for efficient project tracking, collaboration,
+            data management, and reporting. It provides tools for researchers to
+            organize their work, share documents, and maintain compliance with
+            regulatory requirements, enhancing productivity and transparency
+            throughout the research lifecycle.<br />
+          </div>
+          <div class="col-md-2">
+            <div class="row mt-3">
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+              <div class="col-1 box_small darkblue"></div>
+              <div class="col-1 box_small emerald"></div>
+            </div>
+          </div>
+          <div class="col-md-2">3</div>
+          <div class="col-md-2">3</div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("theme", theme);
+        document.getElementById("themeLabel").innerText =
+          theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+      }
+
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("change", function (event) {
+          if (event.target.checked) {
+            setTheme("dark");
+          } else {
+            setTheme("");
+          }
+        });
+
+      window.onload = function () {
+        let savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+          if (savedTheme === "dark") {
+            document.getElementById("darkModeToggle").checked = true;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
